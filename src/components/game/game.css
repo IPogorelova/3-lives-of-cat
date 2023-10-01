@@ -1,0 +1,26 @@
+.field {
+  display: grid;
+  grid-template: repeat(3, 1fr) / repeat(5, 20%);
+  width: 100vw;
+  height: calc(100vh - 200px);
+  margin-top: auto;
+  margin-bottom: 0;
+  border: 3px solid plum;
+  box-sizing: border-box;
+}
+
+.field__cell {
+  width: 100%;
+  height: 100%;
+  border: 3px solid plum;
+  border-radius: 0;
+}
+
+.popup {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: #fff;
+}
