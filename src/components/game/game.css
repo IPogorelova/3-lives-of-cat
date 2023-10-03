@@ -60,6 +60,7 @@ button.field__cell_disabled {
   padding: 24px;
   background-color: #242424;
   overflow-x: hidden;
+  z-index: 2;
 }
 
 .popup__title {
