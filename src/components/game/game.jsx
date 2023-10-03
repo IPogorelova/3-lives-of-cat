@@ -1,10 +1,10 @@
 import { useState } from 'react';
 
-import { SOCIAL_DATA, UNSOCIAL_DATA, CATS_DATA } from '../../assets/data.js';
+import { SOCIAL_DATA, UNSOCIAL_DATA, CATS_DATA } from '../slides/data.jsx';
 
 import './game.css';
 
-const Field = ({ id, question, answer }) => {
+const Field = ({ id, title, question, isCat, className }) => {
   const [isClicked, setIsClicked] = useState(false);
   const [isPopupOpened, setIsPopupOpened] = useState(false);
 
@@ -15,18 +15,20 @@ const Field = ({ id, question, answer }) => {
 
   return (
     <>
+      <button type="button" onClick={() => buttonClickHandler()} className={`field__cell ${className} ${isClicked && 'field__cell_disabled'}`}>
+        {id}
+      </button>
       {isPopupOpened && (
         <div className="popup">
-          <button type="button" onClick={() => setIsPopupOpened(false)}>X</button>
-          hi, that's me C:
-          <h3>{question}</h3>
-          <br/>
-          <p>{answer}</p>
+          <button type="button" onClick={() => setIsPopupOpened(false)} className="popup__close">X</button>
+          <h2 className="popup__title popup__title_tag">
+            {title}&nbsp;
+            <span className="text-colored">{id}</span>
+            {isCat && <span className="tag">Кот в мешке</span>}
+          </h2>
+          {question}
         </div>
       )}
-      <button type="button" onClick={() => buttonClickHandler()} disabled={isClicked} className="field__cell">
-        My Button
-      </button>
     </>
 
   )
@@ -36,9 +38,12 @@ const Game = () => {
 
   return (
     <div className="field">
-      {SOCIAL_DATA.map(question => <div key={`social_${question.id}`}><Field {...question} /></div>)}
-      {UNSOCIAL_DATA.map(question => <div key={`unsocial_${question.id}`}><Field {...question} /></div>)}
-      {CATS_DATA.map(question => <div key={`cats_${question.id}`}><Field {...question} /></div>)}
+      <p className="field__cell field__cell_text field__cell_first">Социальная жизнь</p>
+      {SOCIAL_DATA.map(question => <div key={`social_${question.id}`}><Field {...question} className="field__cell_first" /></div>)}
+      <p className="field__cell field__cell_text">Асоциальная жизнь</p>
+      {UNSOCIAL_DATA.map(question => <div key={`unsocial_${question.id}`}><Field {...question} className="field__cell_second" /></div>)}
+      <p className="field__cell field__cell_text">Котячья жизнь</p>
+      {CATS_DATA.map(question => <div key={`cats_${question.id}`}><Field {...question} className="field__cell_third" /></div>)}
     </div>
   )
 };

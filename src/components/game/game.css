@@ -1,8 +1,8 @@
 .field {
   display: grid;
-  grid-template: repeat(3, 1fr) / repeat(5, 20%);
+  grid-template: repeat(3, 1fr) / repeat(7, 1fr);
   width: 100vw;
-  height: calc(100vh - 200px);
+  height: calc(100vh - 170px);
   margin-top: auto;
   margin-bottom: 0;
   border: 3px solid plum;
@@ -12,15 +12,151 @@
 .field__cell {
   width: 100%;
   height: 100%;
+  padding: 0;
   border: 3px solid plum;
   border-radius: 0;
+  font-size: 64px;
+  transition: background-color 0.25s ease-in-out;
+}
+
+.field__cell_first:hover {
+  border: 3px solid plum;
+  background-color: rgba(221, 160, 221, 0.7);
+}
+
+.field__cell_second:hover {
+  border: 3px solid plum;
+  background-color: rgba(243, 152, 53, 0.7);
+}
+
+.field__cell_third:hover {
+  border: 3px solid plum;
+  background-color: rgba(100, 108, 255, 0.7);
+}
+
+.field__cell_disabled {
+  opacity: 0.2;
+}
+
+.field__cell_text {
+  margin: 0;
+  padding: 12px;
+  font-size: 32px;
+  background: #1a1a1a;
+}
+
+.field__cell_text:hover {
+  background-color: #1a1a1a;
 }
 
 .popup {
   position: absolute;
   top: 0;
   left: 0;
+  display: flex;
+  align-items: center;
   width: 100vw;
   height: 100vh;
-  background-color: #fff;
+  padding: 24px;
+  background-color: #242424;
+  overflow-x: hidden;
+}
+
+.popup__title {
+  position: absolute;
+  top: 24px;
+  left: 24px;
+}
+
+.popup__title_tag {
+  display: flex;
+  align-items: center;
+}
+
+.popup__close {
+  position: absolute;
+  top: 24px;
+  right: 24px;
+}
+
+.tag {
+  position: relative;
+  right: -18px;
+  top: 1px;
+  display: inline-block;
+  margin-right: -8px;
+  padding: 8px 16px;
+  font-size: 16px;
+  background-color: rgba(221, 160, 221, 0.7);
+  filter: drop-shadow(0 0 6px rgb(221, 160, 221));
+  color: #ffffff;
+  border-radius: 8px;
+}
+
+.slide {
+  width: 100%;
+}
+
+.popup ul,
+.popup h4 {
+  font-size: 24px;
+}
+
+.popup h3 {
+  font-size: 32px;
+}
+
+.popup .ul {
+  font-size: 16px;
+}
+
+.popup h5 {
+  font-size: 18px;
+}
+
+.slide-long {
+  height: 75vh;
+}
+
+.row {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.row-center {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.col-6 {
+  width: calc(50% - 12px);
+}
+
+.col-12 {
+  width: 100%;
+}
+
+.col-inline {
+  width: fit-content;
+  margin-right: 24px;
+}
+
+.col-center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.offset-top-48 {
+  margin-top: 48px;
+}
+
+.offset-top-24 {
+  margin-top: 24px;
+}
+
+.text-colored {
+  color: plum;
 }
