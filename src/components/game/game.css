@@ -34,7 +34,7 @@
   background-color: rgba(100, 108, 255, 0.7);
 }
 
-.field__cell_disabled {
+button.field__cell_disabled {
   opacity: 0.2;
 }
 
@@ -159,4 +159,13 @@
 
 .text-colored {
   color: plum;
+}
+
+.clickable {
+  cursor: pointer;
+  opacity: 1;
+}
+
+.clickable_clicked {
+  opacity: 0.2;
 }
