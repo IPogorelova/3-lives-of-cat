@@ -170,3 +170,7 @@ button.field__cell_disabled {
 .clickable_clicked {
   opacity: 0.2;
 }
+
+.emoji {
+  font-size: 56px!important;
+}
