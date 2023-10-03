@@ -8,10 +8,16 @@ function App() {
   return (
     <>
       <div className="header">
-        <div className="logo">
-          🐱
+        <div className="header__logo">
+          <div className="logo">
+            🐱
+          </div>
+          <h1>3 lives of the cat</h1>
         </div>
-        <h1>3 lives of the cat</h1>
+        <p className="header__easter-egg">
+          Алёночка, с днём рождения 🎉💜 <br />
+          04.10.2023
+        </p>
       </div>
     </>
   )

@@ -1,12 +1,31 @@
 .header {
     display: flex;
+    justify-content: space-between;
 }
 
 .header h1 {
     margin-left: 14px;
 }
 
+.header__logo {
+    display: flex;
+}
+
+.header__easter-egg {
+    width: 340px;
+    padding-right: 24px;
+    font-size: 22px;
+    text-align: right;
+    opacity: 0;
+    transition: opacity 0.35s ease-in-out;
+}
+
+.header__easter-egg:hover {
+    opacity: 1;
+}
+
 .logo {
+    height: 128px;
     padding: 0 8px;
     font-size: 64px;
     will-change: filter;
